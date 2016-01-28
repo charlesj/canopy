@@ -2,13 +2,10 @@
 task :default => [:build, :ui]
 
 task :build do
-  sh 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe canopy.sln'
-end
-
-task :server do
-  sh "start ruby testpages/app.rb"
+  sh 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe canopy.sln' 
+  #sh 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe canopy.sln /p:VisualStudioVersion=12.0' 
 end
 
 task :ui do
-  sh 'basictests\bin\debug\basictests.exe'
+  sh 'tests\basictests\bin\debug\basictests.exe'
 end
